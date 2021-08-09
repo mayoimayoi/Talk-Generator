@@ -4,7 +4,7 @@ const app = express();
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
-const port = process.env | 3000;
+const port = process.env.PORT | 3000;
 
 require("dotenv").config();
 app.use(bodyParser.urlencoded({ extended: true }));
