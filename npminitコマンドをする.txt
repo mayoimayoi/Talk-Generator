@@ -1,0 +1,37 @@
+○必要なものをインストールする
+　npm install express --save
+  npm install --save-dev nodemon
+
+
+○必要に応じてインストールする
+npm install ejs 
+npm install body-parser
+
+○nodejsのバージョンをpackage.jsonに記載する
+//nodejsのバージョンを記載する（node -vで確認できる）  
+  "engines": {
+    "node": "14.x"
+  }
+
+○ejsを使う例
+"use strict";
+
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+const port = 3000;
+const mysql = require("mysql");
+const ejs = require("ejs");
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.set("view engine", "ejs");
+
+
+app.get("/", (req, res) => {
+res.render("index.ejs");
+});
+
+
+app.listen(port, () => {
+  console.log(`open port ${port}!`);
+});

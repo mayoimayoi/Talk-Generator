@@ -1,0 +1,9 @@
+  .footer-nav__conmanyname {
+    @include mq("sp") {
+      @include container($layout-width-smartphone, 80%);
+    }
+
+
+  @include container(1000px, 80%);
+  @include flexdirection();
+  @include flex();

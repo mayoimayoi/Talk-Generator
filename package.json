@@ -1,0 +1,33 @@
+{
+  "name": "talk-generator",
+  "version": "1.0.0",
+  "description": "Talk-Generator",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayoimayoi/Talk-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayoimayoi/Talk-Generator/issues"
+  },
+  "homepage": "https://github.com/mayoimayoi/Talk-Generator#readme",
+  "engines": {
+    "node": "16.x"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

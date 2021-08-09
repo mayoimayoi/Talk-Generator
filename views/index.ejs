@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../../scss/style.css" />
+    <link rel="stylesheet" href="./../../scss/page/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="/"><img src="./img/logo.jpg" alt="ロゴ画像" /></a>
+    <h1>話題性抜群！トークジェネレーター</h1>
+    <p>今ホットな話題</p>
+    <% talk.forEach((date)=>{ %>
+    <p><%= date.t_talk_contents %></p>
+    <% }); %>
+    <a href="/"><button>おかわり</button></a>
+    <form action="/" method="POST">
+      <h2>登録フォーム</h2>
+      <p>話題内容</p>
+      <input type="text" name="t_talk_contents" />
+      <button type="submit">登録する</button>
+    </form>
+  </body>
+</html>
