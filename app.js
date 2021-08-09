@@ -4,7 +4,7 @@ const app = express();
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
-const port = process.env.PORT | 3000;
+const port = process.env.PORT || 3000;
 let path = require("path");
 
 require("dotenv").config();
