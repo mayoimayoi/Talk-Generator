@@ -5,6 +5,7 @@ const ejs = require("ejs");
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
 const port = process.env.PORT | 3000;
+let path = require("path");
 
 require("dotenv").config();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -16,5 +17,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`open ${port}`);
+  console.log(`Example app listening at http://localhost:${port}`);
 });
