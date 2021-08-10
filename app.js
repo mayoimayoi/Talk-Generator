@@ -27,12 +27,12 @@ const con = mysql.createConnection({
 //   }
 // );
 
-const sql =
-  "CREATE TABLE  IF NOT EXISTS t_talk (t_talk_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, t_talk_contents VARCHAR(65535) NOT NULL)";
-con.query(sql, function (err, result) {
-  if (err) throw err;
-  console.log("table created");
-});
+// const sql =
+//   "CREATE TABLE IF NOT EXISTS t_talk (t_talk_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, t_talk_contents VARCHAR(65535) NOT NULL)";
+// con.query(sql, function (err, result) {
+//   if (err) throw err;
+//   console.log(result.body);
+// });
 
 app.get("/", (req, res) => {
   //ランダムでデータを一つ持ってくる
