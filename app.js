@@ -55,7 +55,6 @@ handleDisconnect();
 // });
 
 app.get("/", (req, res) => {
-  handleDisconnect();
   //ランダムでデータを一つ持ってくる
   let sql = "select * from t_talk ORDER BY RAND() LIMIT 1";
   con.query(sql, (err, result, fields) => {
@@ -65,12 +64,10 @@ app.get("/", (req, res) => {
 });
 
 app.get("/regist", (req, res) => {
-  handleDisconnect();
   res.render("./regist/regist.ejs");
 });
 
 app.post("/", (req, res) => {
-  handleDisconnect();
   let sql = "INSERT INTO t_talk SET ?";
   con.query(sql, req.body, (err, result, fields) => {
     if (err) throw err;
