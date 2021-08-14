@@ -13,7 +13,8 @@ app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 
 const con = mysql.createPool({
-  connectionLimit: 10,
+  //一度に生成する接続インスタンスの数
+  connectionLimit: 1,
   host: "us-cdbr-east-04.cleardb.com",
   user: "b49911f971b31b",
   password: process.env.KEY1,
