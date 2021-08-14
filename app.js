@@ -20,24 +20,24 @@ const con = mysql.createConnection({
 });
 
 //mysqlは一定時間操作がないと接続を切ってしまうので切られないように起動時に処理をするß
-function handleDisconnect() {
-  con.connect((err) => {
-    if (err) {
-      console.log("1. error when connecting to db:", err);
-      setTimeout(handleDisconnect, 1000);
-    }
-  });
-  con.on("error", function (err) {
-    console.log("3. db error", err);
-    if (err.code === "PROTOCOL_CONNECTION_LOST") {
-      handleDisconnect();
-    } else {
-      throw err;
-    }
-  });
-}
+// function handleDisconnect() {
+//   con.connect((err) => {
+//     if (err) {
+//       console.log("1. error when connecting to db:", err);
+//       setTimeout(handleDisconnect, 1000);
+//     }
+//   });
+//   con.on("error", function (err) {
+//     console.log("3. db error", err);
+//     if (err.code === "PROTOCOL_CONNECTION_LOST") {
+//       handleDisconnect();
+//     } else {
+//       throw err;
+//     }
+//   });
+// }
 
-handleDisconnect();
+// handleDisconnect();
 
 // con.query(
 //   "CREATE DATABASE IF NOT EXISTS talkgenerator_db",
