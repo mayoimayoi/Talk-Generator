@@ -12,7 +12,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 
-const con = mysql.createConnection({
+const con = mysql.createPool({
+  connectionLimit: 10,
   host: "us-cdbr-east-04.cleardb.com",
   user: "b49911f971b31b",
   password: process.env.KEY1,
