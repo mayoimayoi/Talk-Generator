@@ -5,21 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./../../scss/style.css" />
     <link rel="stylesheet" href="./../../scss/page/style.css" />
-    <title>Document</title>
+    <title>トークトーク</title>
   </head>
   <body>
-    <a href="/"><img src="./img/logo.jpg" alt="ロゴ画像" /></a>
-    <h1>話題性抜群！トークジェネレーター</h1>
-    <p>今ホットな話題</p>
-    <% talk.forEach((date)=>{ %>
-    <p><%= date.t_talk_contents %></p>
-    <% }); %>
-    <a href="/"><button>おかわり</button></a>
-    <form action="/" method="POST">
-      <h2>登録フォーム</h2>
-      <p>話題内容</p>
-      <input type="text" name="t_talk_contents" />
-      <button type="submit">登録する</button>
-    </form>
+    <header class="container">
+      <div class="top-logo mt-20">
+        <a href="/" class="top-logo--link"
+          ><img src="./img/talktalk_logo.png" alt="トークトークロゴ画像"
+        /></a>
+      </div>
+    </header>
+    <main class="container">
+      <section>
+        <div class="white__box white__box__center">
+          <h1 class="mt-30">トークテーマ</h1>
+          <% talk.forEach((date)=>{ %>
+          <p class="mt-20"><%= date.t_talk_contents %></p>
+          <button class="good-btn mt-20">
+            <img
+              src="./img/goodmark.png"
+              alt="いいねマーク"
+              class="good-btn--float"
+            /><span class="good-btn--float">いいね</span><%= date.t_talk_good %>
+          </button>
+          <% }); %>
+          <a href="/" class="large_btn red_btn mx-40"
+            ><span>話題チェンジ</span></a
+          >
+        </div>
+      </section>
+      <section>
+        <div class="top-contentsbox mt-100">
+          <h2>話題を投稿する</h2>
+          <p class="mt-10">
+            トーク★トークは皆んなで作るサービスです。自分が話て盛り上がった話題・
+            誰かに話して欲しい話題を気軽に投稿してください！
+          </p>
+          <a href="/regist" class="small_btn purple_btn mt-30"
+            >話題を投稿する</a
+          >
+        </div>
+      </section>
+      <section>
+        <div class="top-contentsbox mt-100">
+          <h2>投稿した話題を管理する</h2>
+          <p class="mt-10">
+            下記の問い合わせよりユーザー名と必要事項を記入の上、ご連絡をお願いいたします
+            該当の連絡先へ話題の一覧をお送りいたします。
+            その後修正や削除の連絡をお願いいたします。
+          </p>
+          <a href="/contact" class="small_btn lightblue_btn mt-30"
+            >お問い合わせ</a
+          >
+        </div>
+      </section>
+      <section>
+        <div class="top-contentsbox mt-100">
+          <h2>キャラクター紹介</h2>
+          <p class="mt-10">
+            このサイトで使っているキャラクターは画家の「ふくちゃん」に
+            書いてもらっています。以下のバナーをクリックして他の絵も見てみてください。
+            絵の依頼も受け付けているそうです。
+          </p>
+          <div class="mx-30">
+            <a href="/">
+              <img
+                src="./img/talktalk_logo.png"
+                alt="ふくちゃんの絵画教室のバナー"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <h2>運営団体：コミおば</h2>
+        <ul>
+          <li><a href="#">コミおばについて</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>

@@ -21,7 +21,8 @@ const con = mysql.createPool({
   database: "heroku_e07d7162f5aeeb7",
 });
 
-//mysqlは一定時間操作がないと接続を切ってしまうので切られないように起動時に処理をするß
+//mysqlは一定時間操作がないと接続を切ってしまうので切られないように起動時に処理をする
+//こね
 // function handleDisconnect() {
 //   con.connect((err) => {
 //     if (err) {
@@ -65,18 +66,31 @@ app.get("/", (req, res) => {
   });
 });
 
+app.post("/", (req, res) => {});
+
 app.get("/regist", (req, res) => {
   res.render("./regist/regist.ejs");
 });
 
-app.post("/", (req, res) => {
-  let sql = "INSERT INTO t_talk SET ?";
-  con.query(sql, req.body, (err, result, fields) => {
+app.post("/regist/complete", (req, res) => {
+  let sql = "INSERT INTO t_talk SET ?;";
+  let registbody = {
+    t_talk_contents: req.body.t_talk_contents,
+    t_talk_userid: req.body.t_talk_userid,
+    t_talk_password: req.body.t_talk_userpassword,
+  };
+  con.query(sql, registbody, (err, result, fields) => {
+    console.log(req.body);
     if (err) throw err;
-    console.log("regist complete");
   });
   res.render("./regist/complete.ejs");
 });
+
+app.get("/contact", (req, res) => {
+  res.render("./contact/contact.ejs");
+});
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

@@ -70,10 +70,23 @@ select {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f8c308), to(#f86d08));
+  background: linear-gradient(#f8c308, #f86d08);
 }
 
 header main footer {
   width: 100%;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2,
+h3,
+p,
+a {
+  font-size: 24px;
 }
 
 a {
@@ -84,5 +97,140 @@ a {
 ul {
   list-style: none;
   padding: 0px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+.mx-30 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.mx-40 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.container {
+  max-width: 920px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 767px;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+footer {
+  border-top: solid 1px #000;
+}
+
+.white__box {
+  background-color: #F9F9F9;
+  max-width: 920%;
+  width: 100%;
+  border-radius: 40px;
+  margin-top: 40px;
+}
+
+.white__box__center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.large_btn {
+  padding: 10px 30px;
+  border-radius: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.small_btn {
+  padding: 5px 30px;
+  border-radius: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.good-btn {
+  padding: 5px 20px;
+  background-color: #fff;
+  border-radius: 40px;
+  line-height: 30px;
+}
+
+.good-btn img {
+  width: 30px;
+  height: 30px;
+}
+
+.good-btn span {
+  padding-right: 20px;
+}
+
+.good-btn .good-btn--float {
+  float: left;
+}
+
+.red_btn {
+  color: #F9F9F9;
+  background-color: #F82020;
+}
+
+.purple_btn {
+  color: #F9F9F9;
+  background-color: #F820A1;
+}
+
+.lightblue_btn {
+  color: #000;
+  background-color: #20EBF8;
 }
 /*# sourceMappingURL=style.css.map */
