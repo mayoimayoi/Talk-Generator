@@ -1,19 +1,85 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+  <head
+    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"
+  >
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta
+      name="description"
+      content="トークトークは人見知りやコミュ障の方向けにランダムで話題を表示するサービスです。なかなか話題が浮かばない、話が盛り上がるにはどうしたらと思うときに使ってください"
+    />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://talk-generator.herokuapp.com" />
+    <meta property="og:site_name" content="talk-generator.herokuapp.com" />
+    <meta property="og:title" content="トークトークトップページ" />
+    <meta
+      property="og:description"
+      content="トークトークは人見知りやコミュ障の方向けにランダムで話題を表示するサービスです。"
+    />
+    <meta name="keywords" content="HTML,CSS,Javascript,nodejs" />
+    <meta name="author" content="タクタク" />
+    <link rel="stylesheet" href="./../../scss/style.css" />
+    <link rel="stylesheet" href="./../../scss/page/style.css" />
+    <title>話題登録画面</title>
   </head>
   <body>
-    <h1>登録フォーム</h1>
-    <p>気軽な話題を登録してください</p>
-    <form action="/regist/complete" method="POST">
-      <p>内容</p>
-      <input type="text" name="t_talk_contents" />
-      <p>ユーザーID</p>
-      <input type="text" name="t_talk_userid" />
-      <button type="submit">登録</button>
-    </form>
+    <header class="container">
+      <div class="top-logo mt-20">
+        <a href="/" class="top-logo--link"
+          ><img src="./img/talktalk_sublogo.png" alt="トークトークサブロゴ画像"
+        /></a>
+      </div>
+    </header>
+    <main class="container">
+      <div class="white__box my-30">
+        <div class="regist-contentsbox">
+          <h1 class="mt-40">★気軽な話題を登録してください★</h1>
+          <p class="regist-contentsbox__annotation mt-20">
+            「昨日の晩御飯は何を食べましたか？」、「好きな食べ物は？など気軽に話題を投稿してください！
+            <br />あなたの話題が誰かの役に立つかも！？
+          </p>
+          <form action="/regist/complete" method="POST">
+            <p class="regist-contentsbox__title mt-40">投稿する話題</p>
+            <textarea
+              class="mt-10"
+              name="t_talk_contents"
+              cols="60"
+              rows="3"
+            ></textarea>
+            <p class="regist-contentsbox__title mt-20">ユーザー名</p>
+            <p class="regist-contentsbox__annotation">
+              ※他の人には公開されません<br />
+              ※投稿を削除する際に必要になります。メモ等忘れないようにしてください
+            </p>
+            <input type="text" name="t_talk_userid" class="mt-10" />
+            <p class="regist-contentsbox__annotation mt-70">
+              下記のような話題は管理人が確認次第、削除する可能性があります。
+              <br />・スパムの疑いがある投稿<br />
+              ・第三者を攻撃するような話題<br />
+              ・公序良俗に反するような話題
+            </p>
+            <div class="regist-contentsbox__btn">
+              <button
+                type="submit"
+                class="purple_btn large_btn top-contentsbox__btn my-30"
+              >
+                投稿する
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <h2>運営団体：コミおば</h2>
+        <ul>
+          <li><a href="#">コミおばについて</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>

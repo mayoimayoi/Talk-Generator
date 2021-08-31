@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+  <head
+    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"
+  >
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta
+      name="description"
+      content="トークトークは人見知りやコミュ障の方向けにランダムで話題を表示するサービスです。なかなか話題が浮かばない、話が盛り上がるにはどうしたらと思うときに使ってください"
+    />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://talk-generator.herokuapp.com" />
+    <meta property="og:site_name" content="talk-generator.herokuapp.com" />
+    <meta property="og:title" content="トークトークトップページ" />
+    <meta
+      property="og:description"
+      content="トークトークは人見知りやコミュ障の方向けにランダムで話題を表示するサービスです。"
+    />
+    <meta name="keywords" content="HTML,CSS,Javascript,nodejs" />
+    <meta name="author" content="タクタク" />
+    <link rel="stylesheet" href="./../../scss/style.css" />
+    <link rel="stylesheet" href="./../../scss/page/style.css" />
+    <title>登録完了画面</title>
   </head>
   <body>
-    <h1>登録完了</h1>
-    <h2>登録いただき誠にありがとございました</h2>
-    <a href="/">戻る</a>
+    <header class="container">
+      <div class="top-logo mt-20">
+        <a href="/" class="top-logo--link"
+          ><img
+            src="./../img/talktalk_sublogo.png"
+            alt="トークトークサブロゴ画像"
+        /></a>
+      </div>
+    </header>
+    <main class="container">
+      <div class="white__box py-30 mb-30">
+        <div class="regist-contentsbox">
+          <h1>登録ありがとうございました</h1>
+          <div class="regist-img my-30">
+            <img src="./../img/rion_stand.jpg" alt="トークトークサブロゴ画像" />
+          </div>
+          <div class="regist-comp__btn">
+            <a href="/" class="small_btn lightblue_btn">戻る</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <h2>運営団体：コミおば</h2>
+        <ul>
+          <li><a href="#">コミおばについて</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>

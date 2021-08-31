@@ -48,4 +48,82 @@
 .top-logo .top-logo--link {
   width: 70%;
 }
+
+.regist-contentsbox {
+  max-width: 800px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+  .regist-contentsbox {
+    max-width: 767px;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.regist-contentsbox h1 {
+  text-align: center;
+}
+
+.regist-contentsbox .regist-contentsbox__title {
+  font-weight: 700;
+}
+
+.regist-contentsbox .regist-contentsbox__annotation {
+  font-size: 16px;
+}
+
+.regist-contentsbox .regist-contentsbox__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.regist-contentsbox .regist-contentsbox__btn button {
+  width: 50%;
+}
+
+.regist-logo .top-logo--link {
+  width: 70%;
+}
+
+.regist-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.regist-img img {
+  width: 50%;
+}
+
+.regist-comp__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.regist-comp__btn a {
+  width: 50%;
+}
 /*# sourceMappingURL=style.css.map */

@@ -85,7 +85,8 @@ h1 {
 h2,
 h3,
 p,
-a {
+a,
+button {
   font-size: 24px;
 }
 
@@ -97,6 +98,10 @@ a {
 ul {
   list-style: none;
   padding: 0px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
 }
 
 .mt-10 {
@@ -115,18 +120,27 @@ ul {
   margin-top: 40px;
 }
 
+.mt-70 {
+  margin-top: 70px;
+}
+
 .mt-100 {
   margin-top: 100px;
 }
 
-.mx-30 {
+.my-30 {
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
-.mx-40 {
+.my-40 {
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+.py-30 {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .container {
@@ -200,10 +214,11 @@ footer {
 }
 
 .good-btn {
+  font-size: 16px;
   padding: 5px 20px;
   background-color: #fff;
   border-radius: 40px;
-  line-height: 30px;
+  line-height: 32px;
 }
 
 .good-btn img {
@@ -217,6 +232,10 @@ footer {
 
 .good-btn .good-btn--float {
   float: left;
+}
+
+.good-btn--input {
+  display: none;
 }
 
 .red_btn {

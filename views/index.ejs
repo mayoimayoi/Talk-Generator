@@ -41,15 +41,42 @@
           <h1 class="mt-30">トークテーマ</h1>
           <% talk.forEach((date)=>{ %>
           <p class="mt-20"><%= date.t_talk_contents %></p>
-          <button class="good-btn mt-20">
-            <img
-              src="./img/goodmark.png"
-              alt="いいねマーク"
-              class="good-btn--float"
-            /><span class="good-btn--float">いいね</span><%= date.t_talk_good %>
-          </button>
           <% }); %>
-          <a href="/" class="large_btn red_btn mx-40"
+          <!-- <form action="/" method="POST">
+            <button class="good-btn mt-20" id="good-btn">
+              <img
+                src="./img/goodmark.png"
+                alt="いいねマーク"
+                class="good-btn--float"
+              /><span class="good-btn--float">いいね</span>
+              <input type="text" name="t_talk_good" />
+            </button>
+          </form> -->
+          <form action="/" method="POST">
+            <% talk.forEach((date)=>{ %>
+            <input
+              class="good-btn--input"
+              type="text"
+              name="t_talk_contents"
+              value="<%= date.t_talk_contents %>"
+            />
+            <input
+              class="good-btn--input"
+              type="number"
+              name="t_talk_good"
+              value="<%= date.t_talk_good %>"
+            />
+            <button class="good-btn mt-20" id="good-btn" type="submit">
+              <img
+                src="./img/goodmark.png"
+                alt="いいねマーク"
+                class="good-btn--float"
+              /><span class="good-btn--float">いいね</span> <%= date.t_talk_good
+              %> <% }); %>
+            </button>
+          </form>
+
+          <a href="/" class="large_btn red_btn my-40"
             ><span>話題チェンジ</span></a
           >
         </div>
@@ -87,7 +114,7 @@
             書いてもらっています。以下のバナーをクリックして他の絵も見てみてください。
             絵の依頼も受け付けているそうです。
           </p>
-          <div class="mx-30">
+          <div class="my-30">
             <a href="/">
               <img
                 src="./img/talktalk_logo.png"

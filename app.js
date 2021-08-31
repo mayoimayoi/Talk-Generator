@@ -66,7 +66,22 @@ app.get("/", (req, res) => {
   });
 });
 
-app.post("/", (req, res) => {});
+app.post("/", (req, res) => {
+  //いいねボタンを一個足す
+  let talkcontents = req.body.t_talk_contents;
+  let goodnumber = 0;
+  let sql = "UPDATE t_talk SET t_talk_good = ? WHERE t_talk_contents = ?";
+  goodnumber = Number(req.body.t_talk_good) + 1;
+  let goodbody = [goodnumber, talkcontents];
+  con.query(sql, goodbody, (err, result, fields) => {
+    if (err) throw err;
+  });
+  sql = "select * from t_talk WHERE t_talk_contents = ?";
+  con.query(sql, talkcontents, (err, result, fields) => {
+    if (err) throw err;
+    res.render("index.ejs", { talk: result });
+  });
+});
 
 app.get("/regist", (req, res) => {
   res.render("./regist/regist.ejs");
@@ -77,7 +92,7 @@ app.post("/regist/complete", (req, res) => {
   let registbody = {
     t_talk_contents: req.body.t_talk_contents,
     t_talk_userid: req.body.t_talk_userid,
-    t_talk_password: req.body.t_talk_userpassword,
+    t_talk_good: 0,
   };
   con.query(sql, registbody, (err, result, fields) => {
     console.log(req.body);
@@ -89,8 +104,6 @@ app.post("/regist/complete", (req, res) => {
 app.get("/contact", (req, res) => {
   res.render("./contact/contact.ejs");
 });
-
-
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
