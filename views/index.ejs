@@ -42,31 +42,15 @@
           <% talk.forEach((date)=>{ %>
           <p class="mt-20"><%= date.t_talk_contents %></p>
           <% }); %>
-          <!-- <form action="/" method="POST">
-            <button class="good-btn mt-20" id="good-btn">
-              <img
-                src="./img/goodmark.png"
-                alt="いいねマーク"
-                class="good-btn--float"
-              /><span class="good-btn--float">いいね</span>
-              <input type="text" name="t_talk_good" />
-            </button>
-          </form> -->
           <form action="/" method="POST">
             <% talk.forEach((date)=>{ %>
-            <input
-              class="good-btn--input"
-              type="text"
-              name="t_talk_contents"
-              value="<%= date.t_talk_contents %>"
-            />
-            <input
-              class="good-btn--input"
-              type="number"
-              name="t_talk_good"
-              value="<%= date.t_talk_good %>"
-            />
-            <button class="good-btn mt-20" id="good-btn" type="submit">
+            <button
+              class="good-btn mt-20"
+              id="good-btn"
+              name="t_talk_id"
+              value="<%= date.t_talk_id %>"
+              type="submit"
+            >
               <img
                 src="./img/goodmark.png"
                 alt="いいねマーク"
@@ -115,9 +99,9 @@
             絵の依頼も受け付けているそうです。
           </p>
           <div class="my-30">
-            <a href="/">
+            <a href="https://coconala.com/users/1311859">
               <img
-                src="./img/talktalk_logo.png"
+                src="./img/fukuda_banner.png"
                 alt="ふくちゃんの絵画教室のバナー"
               />
             </a>
@@ -129,8 +113,13 @@
       <div class="container">
         <h2>運営団体：コミおば</h2>
         <ul>
-          <li><a href="#">コミおばについて</a></li>
-          <li><a href="#">お問い合わせ</a></li>
+          <li>
+            <a
+              href="https://ameblo.jp/nakakunll/entry-12659292370.html?frm=theme"
+              >コミおばについて（ブログ）</a
+            >
+          </li>
+          <li><a href="/contact">お問い合わせ</a></li>
         </ul>
       </div>
     </footer>

@@ -21,35 +21,6 @@ const con = mysql.createPool({
   database: "heroku_e07d7162f5aeeb7",
 });
 
-//mysqlは一定時間操作がないと接続を切ってしまうので切られないように起動時に処理をする
-//こね
-// function handleDisconnect() {
-//   con.connect((err) => {
-//     if (err) {
-//       console.log("1. error when connecting to db:", err);
-//       setTimeout(handleDisconnect, 1000);
-//     }
-//   });
-//   con.on("error", function (err) {
-//     console.log("3. db error", err);
-//     if (err.code === "PROTOCOL_CONNECTION_LOST") {
-//       handleDisconnect();
-//     } else {
-//       throw err;
-//     }
-//   });
-// }
-
-// handleDisconnect();
-
-// con.query(
-//   "CREATE DATABASE IF NOT EXISTS talkgenerator_db",
-//   function (err, result) {
-//     if (err) throw err;
-//     console.log("database created");
-//   }
-// );
-
 // const sql =
 //   "CREATE TABLE IF NOT EXISTS t_talk (t_talk_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, t_talk_contents VARCHAR(65535) NOT NULL)";
 // con.query(sql, function (err, result) {
@@ -59,7 +30,7 @@ const con = mysql.createPool({
 
 app.get("/", (req, res) => {
   //ランダムでデータを一つ持ってくる
-  let sql = "select * from t_talk ORDER BY RAND() LIMIT 1";
+  let sql = "select * from t_talk ORDER BY RAND() LIMIT 1;";
   con.query(sql, (err, result, fields) => {
     if (err) throw err;
     res.render("index.ejs", { talk: result });
@@ -68,34 +39,37 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
   //いいねボタンを一個足す
-  let talkcontents = req.body.t_talk_contents;
-  let goodnumber = 0;
-  let sql = "UPDATE t_talk SET t_talk_good = ? WHERE t_talk_contents = ?";
-  goodnumber = Number(req.body.t_talk_good) + 1;
-  let goodbody = [goodnumber, talkcontents];
+  let sql =
+    "UPDATE t_talk SET t_talk_good = t_talk_good+1   WHERE t_talk_id = ?;";
+  let goodbody = req.body.t_talk_id;
   con.query(sql, goodbody, (err, result, fields) => {
     if (err) throw err;
   });
-  sql = "select * from t_talk WHERE t_talk_contents = ?";
-  con.query(sql, talkcontents, (err, result, fields) => {
+  sql = "select * from t_talk WHERE t_talk_id = ?;";
+  con.query(sql, goodbody, (err, result, fields) => {
     if (err) throw err;
     res.render("index.ejs", { talk: result });
   });
 });
 
 app.get("/regist", (req, res) => {
-  res.render("./regist/regist.ejs");
+  let errorbit = "";
+  res.render("./regist/regist.ejs", { errorbit: errorbit });
 });
 
 app.post("/regist/complete", (req, res) => {
+  //herokuの使用でIDは１０とびで振られるので注意
   let sql = "INSERT INTO t_talk SET ?;";
   let registbody = {
     t_talk_contents: req.body.t_talk_contents,
     t_talk_userid: req.body.t_talk_userid,
     t_talk_good: 0,
   };
+  if (registbody.t_talk_contents === "") {
+    let errorbit = "入力した値が正しくありません。確認してください";
+    res.render("./regist/regist.ejs", { errorbit: errorbit });
+  }
   con.query(sql, registbody, (err, result, fields) => {
-    console.log(req.body);
     if (err) throw err;
   });
   res.render("./regist/complete.ejs");

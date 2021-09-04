@@ -1,9 +1,71 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+  <head
+    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"
+  >
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="トークトークは人見知りやコミュ障の方向けにランダムで話題を表示するサービスです。なかなか話題が浮かばない、話が盛り上がるにはどうしたらと思うときに使ってください"
+    />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://talk-generator.herokuapp.com" />
+    <meta property="og:site_name" content="talk-generator.herokuapp.com" />
+    <meta property="og:title" content="トークトークトップページ" />
+    <meta
+      property="og:description"
+      content="トークトークは人見知りやコミュ障の方向けにランダムで話題を表示するサービスです。"
+    />
+    <meta name="keywords" content="HTML,CSS,Javascript,nodejs" />
+    <meta name="author" content="タクタク" />
+    <link rel="stylesheet" href="./../../scss/style.css" />
+    <link rel="stylesheet" href="./../../scss/page/style.css" />
     <title>お問い合わせ</title>
   </head>
-  <body></body>
+  <body>
+    <header class="container">
+      <div class="top-logo mt-20">
+        <a href="/" class="top-logo--link"
+          ><img src="./img/talktalk_sublogo.png" alt="トークトークサブロゴ画像"
+        /></a>
+      </div>
+    </header>
+    <main class="container">
+      <p class="mt-30">
+        以下のフォームにお問い合わせ内容の記載をお願いいたします。
+      </p>
+      <p class="fs-16">
+        ※googleのサービスを利用しているためお使いの端末によっては見づらい可能性がございます。
+      </p>
+      <iframe
+        class="my-30"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeO-3jnfeOYrE-42vuYaCWwL0c1IGVldrTQQ9ftUpoWDz0K8Q/viewform?embedded=true"
+        width="100%"
+        height="948"
+        frameborder="1"
+        marginheight="30"
+        marginwidth="30"
+        >読み込んでいます…</iframe
+      >
+      <div class="wf-50 my-30">
+        <a href="/" class="small_btn lightblue_btn">戻る</a>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <h2>運営団体：コミおば</h2>
+        <ul>
+          <li>
+            <a
+              href="https://ameblo.jp/nakakunll/entry-12659292370.html?frm=theme"
+              >コミおばについて（ブログ）</a
+            >
+          </li>
+          <li><a href="#">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
 </html>

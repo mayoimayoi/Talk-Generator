@@ -138,9 +138,33 @@ ul {
   margin-bottom: 40px;
 }
 
+.pt-30 {
+  padding-top: 30px;
+}
+
 .py-30 {
   padding-top: 30px;
   padding-bottom: 30px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.wf-50 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wf-50 a {
+  width: 50%;
 }
 
 .container {

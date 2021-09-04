@@ -28,26 +28,26 @@
     <header class="container">
       <div class="top-logo mt-20">
         <a href="/" class="top-logo--link"
-          ><img src="./img/talktalk_sublogo.png" alt="トークトークサブロゴ画像"
+          ><img
+            src="./../img/talktalk_sublogo.png"
+            alt="トークトークサブロゴ画像"
         /></a>
       </div>
     </header>
     <main class="container">
       <div class="white__box my-30">
         <div class="regist-contentsbox">
-          <h1 class="mt-40">★気軽な話題を登録してください★</h1>
+          <% if (errorbit != "") { %>
+          <p><%= errorbit %></p>
+          <% } %>
+          <h1 class="pt-30">★気軽な話題を登録してください★</h1>
           <p class="regist-contentsbox__annotation mt-20">
             「昨日の晩御飯は何を食べましたか？」、「好きな食べ物は？など気軽に話題を投稿してください！
             <br />あなたの話題が誰かの役に立つかも！？
           </p>
           <form action="/regist/complete" method="POST">
             <p class="regist-contentsbox__title mt-40">投稿する話題</p>
-            <textarea
-              class="mt-10"
-              name="t_talk_contents"
-              cols="60"
-              rows="3"
-            ></textarea>
+            <textarea class="mt-10" name="t_talk_contents"></textarea>
             <p class="regist-contentsbox__title mt-20">ユーザー名</p>
             <p class="regist-contentsbox__annotation">
               ※他の人には公開されません<br />
@@ -70,14 +70,25 @@
             </div>
           </form>
         </div>
+        <div class="regist-img py-30">
+          <img
+            src="./../img/elephant_post.jpg"
+            alt="トークトークサブロゴ画像"
+          />
+        </div>
       </div>
     </main>
     <footer>
       <div class="container">
         <h2>運営団体：コミおば</h2>
         <ul>
-          <li><a href="#">コミおばについて</a></li>
-          <li><a href="#">お問い合わせ</a></li>
+          <li>
+            <a
+              href="https://ameblo.jp/nakakunll/entry-12659292370.html?frm=theme"
+              >コミおばについて（ブログ）</a
+            >
+          </li>
+          <li><a href="/contact">お問い合わせ</a></li>
         </ul>
       </div>
     </footer>
