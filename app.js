@@ -60,19 +60,29 @@ app.get("/regist", (req, res) => {
 app.post("/regist/complete", (req, res) => {
   //herokuの使用でIDは１０とびで振られるので注意
   let sql = "INSERT INTO t_talk SET ?;";
+  let error_part = "";
+
   let registbody = {
     t_talk_contents: req.body.t_talk_contents,
     t_talk_userid: req.body.t_talk_userid,
     t_talk_good: 0,
   };
-  if (registbody.t_talk_contents === "") {
-    let errorbit = "入力した値が正しくありません。確認してください";
-    res.render("./regist/regist.ejs", { errorbit: errorbit });
+
+  if (registbody.t_talk_contents === "" || registbody.t_talk_userid === "") {
+    error_part = "話題もしくはユーザー名が空白です。確認してください";
+  } else if (registbody.t_talk_contents.length <= 2) {
+    error_part = "文字が短すぎます。最低３文字以上入力してください";
+  } else if (registbody.t_talk_contents.length >= 150) {
+    error_part = "文字が長すぎます。150字以下にしてください";
   }
-  con.query(sql, registbody, (err, result, fields) => {
-    if (err) throw err;
-  });
-  res.render("./regist/complete.ejs");
+  if (error_part != "") {
+    res.render("./regist/regist.ejs", { errorpart: error_part });
+  } else {
+    con.query(sql, registbody, (err, result, fields) => {
+      if (err) throw err;
+    });
+    res.render("./regist/complete.ejs");
+  }
 });
 
 app.get("/contact", (req, res) => {
