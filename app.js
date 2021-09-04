@@ -13,7 +13,7 @@ app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 
 const con = mysql.createPool({
-  //一度に生成する接続インスタンスの数
+  //一度に生成する接続インスタンスの数（これがないとmysqlがタイムアウトしてしまう）
   connectionLimit: 1,
   host: "us-cdbr-east-04.cleardb.com",
   user: "b49911f971b31b",
@@ -53,8 +53,8 @@ app.post("/", (req, res) => {
 });
 
 app.get("/regist", (req, res) => {
-  let errorbit = "";
-  res.render("./regist/regist.ejs", { errorbit: errorbit });
+  let error_part = "";
+  res.render("./regist/regist.ejs", { errorpart: error_part });
 });
 
 app.post("/regist/complete", (req, res) => {
