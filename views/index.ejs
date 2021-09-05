@@ -21,19 +21,21 @@
       property="og:description"
       content="トークトークは人見知りやコミュ障の方向けにランダムで話題を表示するサービスです。"
     />
-    <meta property="og:image" content="./img/rabbit_stand.jpg" />
+    <meta property="og:image" content="img/rabbit_stand.jpg" />
     <meta name="keywords" content="HTML,CSS,Javascript,nodejs" />
     <meta name="author" content="タクタク" />
-    <link rel="stylesheet" href="./../../scss/style.css" />
-    <link rel="stylesheet" href="./../../scss/page/style.css" />
+    <link rel="stylesheet" href="scss/style.css" />
+    <link rel="stylesheet" href="scss/page/style.css" />
     <title>トークトーク</title>
   </head>
   <body>
     <header class="container">
       <div class="top-logo mt-20">
         <a href="/" class="top-logo--link"
-          ><img src="./img/talktalk_logo.png" alt="トークトークロゴ画像"
-        /></a>
+          ><figure>
+            <img src="img/talktalk_logo.png" alt="トークトークロゴ画像" />
+          </figure>
+        </a>
       </div>
     </header>
     <main class="container">
@@ -53,7 +55,7 @@
               type="submit"
             >
               <img
-                src="./img/goodmark.png"
+                src="img/goodmark.png"
                 alt="いいねマーク"
                 class="good-btn--float"
               /><span class="good-btn--float">いいね</span> <%= date.t_talk_good
@@ -101,10 +103,12 @@
           </p>
           <div class="my-30">
             <a href="https://coconala.com/users/1311859">
-              <img
-                src="./img/fukuda_banner.png"
-                alt="ふくちゃんの絵画教室のバナー"
-              />
+              <figure>
+                <img
+                  src="img/fukuda_banner.png"
+                  alt="ふくちゃんの絵画教室のバナー"
+                />
+              </figure>
             </a>
           </div>
         </div>
