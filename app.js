@@ -5,12 +5,15 @@ const ejs = require("ejs");
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
 const port = process.env.PORT || 3000;
+const helmet = require("helmet");
 let path = require("path");
 
 require("dotenv").config();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
+app.use(helmet.xssFilter());
+app.use(helmet.frameguard({ action: "sameorigin" }));
 
 const con = mysql.createPool({
   //一度に生成する接続インスタンスの数（これがないとmysqlがタイムアウトしてしまう）
