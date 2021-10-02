@@ -25,7 +25,7 @@ const con = mysql.createPool({
 });
 
 // const sql =
-//   "CREATE TABLE IF NOT EXISTS t_reaction (t_talk_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, t_talk_contents VARCHAR(65535) NOT NULL)";
+//   "CREATE TABLE IF NOT EXISTS t_reaction (t_reaction_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, t_talk_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, t_talk_contents VARCHAR(65535) NOT NULL)";
 //   if (err) throw err;
 // });
 
