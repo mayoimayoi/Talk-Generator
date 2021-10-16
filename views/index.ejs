@@ -21,11 +21,14 @@
       property="og:description"
       content="トークトークは人見知りやコミュ障の方向けにランダムで話題を表示するサービスです。"
     />
-    <meta property="og:image" content="https://talk-generator.herokuapp.com/img/talktalk_logo.png" />
+    <meta
+      property="og:image"
+      content="https://talk-generator.herokuapp.com/img/talktalk_logo.png"
+    />
     <meta name="keywords" content="HTML,CSS,Javascript,nodejs" />
     <meta name="author" content="タクタク" />
-    <link rel="stylesheet" href="scss/style.css" />
-    <link rel="stylesheet" href="scss/page/style.css" />
+    <link rel="stylesheet" href="/public/scss/style.css" />
+    <link rel="stylesheet" href="/public/scss/page/style.css" />
     <title>トークトーク</title>
   </head>
   <body>
@@ -33,7 +36,10 @@
       <div class="top-logo mt-20">
         <a href="/" class="top-logo--link"
           ><figure>
-            <img src="img/talktalk_logo.png" alt="トークトークロゴ画像" />
+            <img
+              src="/public/img/talktalk_logo.png"
+              alt="トークトークロゴ画像"
+            />
           </figure>
         </a>
       </div>
@@ -55,7 +61,7 @@
               type="submit"
             >
               <img
-                src="img/goodmark.png"
+                src="/public/img/goodmark.png"
                 alt="いいねマーク"
                 class="good-btn--float"
               /><span class="good-btn--float">いいね</span> <%= date.t_talk_good
@@ -105,7 +111,7 @@
             <a href="https://coconala.com/users/1311859">
               <figure>
                 <img
-                  src="img/fukuda_banner.png"
+                  src="/public/img/fukuda_banner.png"
                   alt="ふくちゃんの絵画教室のバナー"
                 />
               </figure>

@@ -9,9 +9,9 @@ const helmet = require("helmet");
 let path = require("path");
 
 require("dotenv").config();
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use("/public", express.static("public"));
 app.use(helmet.xssFilter());
 app.use(helmet.frameguard({ action: "sameorigin" }));
 
@@ -24,15 +24,14 @@ const con = mysql.createPool({
   database: "heroku_e07d7162f5aeeb7",
 });
 
-//gitreset テスト用
-//mergeしてみるよ.。難しいけど
-// const sql =
-//   "CREATE TABLE IF NOT EXISTS t_reaction (t_talk_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, t_talk_contents VARCHAR(65535) NOT NULL)";
-//   if (err) throw err;
-// });
-
 app.get("/", (req, res) => {
   //ランダムでデータを一つ持ってくる
+  let testsql =
+    "select t_reaction_contents from t_reaction JOIN t_talk WHERE t_talk.t_talk_id = t_reaction.t_talk_id";
+  con.query(testsql, (err, result, fields) => {
+    if (err) throw err;
+  });
+
   let sql = "select * from t_talk ORDER BY RAND() LIMIT 1;";
   con.query(sql, (err, result, fields) => {
     if (err) throw err;
